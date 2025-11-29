@@ -1,8 +1,8 @@
-# alx-project-0x03-setup
+# alx-project-0x04-setup
 
-A **Next.js + TypeScript** project scaffold demonstrating best practices for building scalable applications with **shared layouts, Google Fonts integration, imperative routing, interface organization, and custom error handling**.  
+A **Next.js + TypeScript** project scaffold demonstrating best practices for building scalable applications with **shared layouts, Google Fonts integration, imperative routing, interface organization, custom error handling, and progressive state management patterns**.  
 
-This repository is part of the **ALX Next.js learning series**, focusing on applying the **DRY principle** and clean architecture patterns in modern frontend development.
+This repository is part of the **ALX Next.js learning series**, focusing on applying the **DRY principle**, clean architecture, and modern frontend development practices.
 
 ---
 
@@ -13,13 +13,14 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
 - Set up a **landing page** with imperative routing using `useRouter`.  
 - Organize and centralize **TypeScript interfaces** for maintainability.  
 - Override Next.js’ default 404 with a **custom error page**.  
+- Explore **state management approaches** (useState, Context API, Redux) in TypeScript for scalable applications.  
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-└── 📁alx-project-0x03
+└── 📁alx-project-0x04
     ├── 📁components
     │   ├── 📁common
     │   │   └── Button.tsx
@@ -27,8 +28,15 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
     │       ├── Header.tsx
     │       ├── Footer.tsx
     │       └── Layout.tsx
+    ├── 📁context
+    │   └── UserContext.tsx        # Context API setup
+    ├── 📁store
+    │   ├── index.ts               # Redux store configuration
+    │   ├── rootReducer.ts
+    │   └── slices/
+    │       └── userSlice.ts       # Redux slice example
     ├── 📁interface
-    │   └── index.ts
+    │   └── index.ts               # Centralized TypeScript interfaces
     ├── 📁pages
     │   ├── 📁api
     │   │   └── hello.ts
@@ -63,14 +71,14 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
 1. **Initialize the project**  
 
    ```bash
-   npx create-next-app@latest alx-project-0x03
-   cd alx-project-0x03
+   npx create-next-app@latest alx-project-0x04
+   cd alx-project-0x04
    ```
 
 2. **Install dependencies**  
 
    ```bash
-   npm install react-icons
+   npm install react-icons redux react-redux @reduxjs/toolkit @types/react-redux
    ```
 
 3. **Run the development server**  
@@ -110,6 +118,12 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
 - Overridden default Next.js error page with a **playful, styled 404.tsx**.  
 - Includes navigation back to home with `react-icons/fa`.  
 
+### 5. State Management Patterns  
+
+- **useState**: Local component state for simple counters.  
+- **Context API**: Global state with `UserContext` provider and custom hook.  
+- **Redux Toolkit**: Centralized store with slices, typed hooks, and predictable state updates.  
+
 ---
 
 ## 🎨 Tech Stack
@@ -118,6 +132,7 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
 - **TypeScript** for type safety  
 - **TailwindCSS** for utility-first styling  
 - **React Icons** for scalable vector icons  
+- **Redux Toolkit + Context API** for state management  
 
 ---
 
@@ -130,6 +145,7 @@ By working through this project, you will:
 - Apply **imperative routing** using `useRouter`.  
 - Organize **interfaces** for maintainability.  
 - Customize **error handling** with a 404 page.  
+- Compare **state management solutions** (useState, Context API, Redux) and know when to use each.  
 
 ---
 
@@ -138,3 +154,5 @@ By working through this project, you will:
 - Extend routing to additional mini‑apps.  
 - Add dynamic data fetching with `getServerSideProps` or `getStaticProps`.  
 - Explore **SEO optimization** with Next.js’ `<Head>` component.  
+- Implement **middleware or persistence** for Redux state.  
+- Optimize Context API with `React.memo` and `useMemo` to reduce re-renders.  
