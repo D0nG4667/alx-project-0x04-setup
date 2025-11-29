@@ -2,7 +2,11 @@
 
 A **Next.js + TypeScript** project scaffold demonstrating best practices for building scalable applications with **shared layouts, Google Fonts integration, imperative routing, interface organization, custom error handling, and progressive state management patterns**.  
 
-This repository is part of the **ALX Next.js learning series**, focusing on applying the **DRY principle**, clean architecture, and modern frontend development practices.
+This repository is part of the **ALX Next.js learning series**, focusing on applying the **DRY principle**, clean architecture, and modern frontend development practices. It evolves across three linked projects:
+
+- **alx-project-0x04** → Base setup with layouts, fonts, routing, interfaces, and custom error handling.  
+- **alx-project-0x05** → Context API implementation for global state management.  
+- **alx-project-0x06** → Redux Toolkit integration for complex, scalable state management.  
 
 ---
 
@@ -20,49 +24,33 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
 ## 📂 Project Structure
 
 ```bash
-└── 📁alx-project-0x04
-    ├── 📁components
-    │   ├── 📁common
-    │   │   └── Button.tsx
-    │   └── 📁layouts
-    │       ├── Header.tsx
-    │       ├── Footer.tsx
-    │       └── Layout.tsx
-    ├── 📁context
-    │   └── UserContext.tsx        # Context API setup
-    ├── 📁store
-    │   ├── index.ts               # Redux store configuration
-    │   ├── rootReducer.ts
-    │   └── slices/
-    │       └── userSlice.ts       # Redux slice example
-    ├── 📁interface
-    │   └── index.ts               # Centralized TypeScript interfaces
-    ├── 📁pages
-    │   ├── 📁api
-    │   │   └── hello.ts
-    │   ├── _app.tsx
-    │   ├── _document.tsx
-    │   ├── 404.tsx
-    │   └── index.tsx
-    ├── 📁public
-    │   ├── favicon.ico
-    │   ├── file.svg
-    │   ├── globe.svg
-    │   ├── next.svg
-    │   ├── vercel.svg
-    │   └── window.svg
-    ├── 📁styles
-    │   └── globals.css
-    ├── .gitignore
-    ├── eslint.config.mjs
-    ├── next-env.d.ts
-    ├── next.config.ts
-    ├── package-lock.json
-    ├── package.json
-    ├── postcss.config.mjs
-    ├── README.md
-    └── tsconfig.json
+└── 📁alx-project-0x04-setup
+    ├── 📁alx-project-0x04        # Base project
+    ├── 📁alx-project-0x05        # Context API version
+    └── 📁alx-project-0x06        # Redux Toolkit version
 ```
+
+### alx-project-0x04 (Base Setup)
+
+- **components/layouts** → Header, Footer, Layout  
+- **components/common** → Button  
+- **interface/index.ts** → Centralized TypeScript interfaces  
+- **pages** → `_app.tsx`, `_document.tsx`, `index.tsx`, `404.tsx`, `counter-app.tsx`  
+- **public** → Static assets (icons, SVGs)  
+- **styles/globals.css** → TailwindCSS + Google Fonts  
+
+### alx-project-0x05 (Context API)
+
+- **context/CountContext.tsx** → Context provider and custom hook  
+- **_app.tsx** → Wrapped with `UserProvider`  
+- **counter-app.tsx** → Counter implemented with Context API  
+
+### alx-project-0x06 (Redux Toolkit)
+
+- **store/store.ts** → Redux store configuration  
+- **slices** → Example slice for counter or user state  
+- **_app.tsx** → Wrapped with Redux `Provider`  
+- **counter-app.tsx** → Counter implemented with Redux hooks  
 
 ---
 
@@ -95,18 +83,18 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
 
 ### 0. Shared Layout  
 
-- Centralized `Header`, `Footer`, and `Layout` components under `components/layouts`.  
+- Centralized `Header`, `Footer`, and `Layout` components.  
 - Ensures **consistency** and adheres to the **DRY principle**.  
 
 ### 1. Google Fonts Integration  
 
-- Imported **Montserrat** via `styles/globals.css`.  
+- Imported **Montserrat** via `globals.css`.  
 - Configured TailwindCSS to apply fonts globally.  
 
 ### 2. Imperative Routing  
 
-- Landing page (`pages/index.tsx`) uses `useRouter` for **programmatic navigation**.  
-- Buttons trigger route changes with explicit `pageRoute` props.  
+- Landing page uses `useRouter` for **programmatic navigation**.  
+- Buttons trigger route changes with explicit props.  
 
 ### 3. Interface Organization  
 
@@ -115,13 +103,13 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
 
 ### 4. Custom 404 Page  
 
-- Overridden default Next.js error page with a **playful, styled 404.tsx**.  
+- Overridden default Next.js error page with a **styled 404.tsx**.  
 - Includes navigation back to home with `react-icons/fa`.  
 
 ### 5. State Management Patterns  
 
 - **useState**: Local component state for simple counters.  
-- **Context API**: Global state with `UserContext` provider and custom hook.  
+- **Context API**: Global state with `CountContext` provider and custom hook.  
 - **Redux Toolkit**: Centralized store with slices, typed hooks, and predictable state updates.  
 
 ---
@@ -138,7 +126,7 @@ This repository is part of the **ALX Next.js learning series**, focusing on appl
 
 ## 📖 Learning Outcomes
 
-By working through this project, you will:  
+By working through this project series, you will:  
 
 - Understand **layout composition** in Next.js.  
 - Learn how to **import and configure Google Fonts** with TailwindCSS.  
